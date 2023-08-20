@@ -5,6 +5,7 @@
 2. Выполнить следующие команды в терминале
 3. docker buid -t streamlit .
 4. docker run -d -p 8501:8501 streamlit
+   
 Cервис будет по адресу localhost:8501
 
 Реализовано 4 справочника 
