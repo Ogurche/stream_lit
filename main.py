@@ -5,7 +5,7 @@ st.write ("""
 # КАБЕЛЬНЫЙ ЖУРНАЛ         
 """)
 cur = db_connection()
-print ('Соединение не установлено')
+print ('Соединение установлено')
 
 with st.form('FORM'): 
 
