@@ -1,6 +1,5 @@
 import sqlite3 as sql
-import pandas as pd 
-# import streamlit as st 
+import pandas as pd  
 
 def db_connection ():
     try:
@@ -9,7 +8,6 @@ def db_connection ():
         print ('Соединение не установлено')
 
 def db_query (table:str, cur):
-    # cur = db_connection()
     qu = f"""SELECT id FROM {table}"""
     if table == 'user':
         query = pd.read_sql("""select                           
@@ -20,11 +18,9 @@ def db_query (table:str, cur):
 
     elif table := any(['server_num','arm']):
         query = pd.read_sql(qu, con=cur)
-    # cur.close()
     return query
 
 def db_ (table:str, cur):
-    # cur = db_connection()
     if table == 'server_num':
         fr = pd.read_sql("""SELECT 
                                 id as 'Номер серверной'
@@ -61,7 +57,6 @@ def db_ (table:str, cur):
                             JOIN user u ON a.user_id = u.id
                             JOIN unit ON u.unit = unit.id
                             """, con=cur)
-    # cur.close()
     return fr
 
 def insertion(server,user,arm, cur:sql.Connection):
